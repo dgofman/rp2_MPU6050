@@ -23,10 +23,15 @@ https://github.com/earlephilhower/arduino-pico/releases/download/global/package_
 
 ### Step 4: Wiring the MPU6050 to the Raspberry Pi Pico
 - Connect the **MPU6050** to the **Raspberry Pi Pico** as follows:
+  
 **MPU6050 VCC** to **Pico 3.3V**
+
 **MPU6050 GND** to **Pico GND**
+
 **MPU6050 SDA** to **Pico GP4**
+
 **MPU6050 SCL** to **Pico GP5**
+
 For detailed wiring, you can refer to the image below:
 
 <img src="wiring_mpu6050.png" width="500px">
@@ -40,5 +45,6 @@ Watch the tutorial on YouTube (https://www.youtube.com/watch?v=2AO_Gmh5K3Q&list=
 
 ## About
 Written by David Gofman.
+
 MIT License – All text above must be included in any redistribution.
 
