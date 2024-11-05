@@ -50,8 +50,6 @@ void setup() {
 }
 
 void loop() {
-  mpu.enableSleep(false);
-
   // If motion is detected, handle it and then sleep again
   if (motionDetected) {
     if (millis() - startMillis >= cooldownTime) {
@@ -60,8 +58,13 @@ void loop() {
       motionHandler();
       if (mpu.getMotionInterruptStatus()) { // Enable motionInterruptHandler 
         println("Going to deep sleep...");
+        // mpu.enableCycle(false);
         mpu.enableSleep(true);
+
         sleep_ms(5000); // enter deep sleep 
+
+        // mpu.enableCycle(true);
+        mpu.enableSleep(false);
       }
     }
   }
@@ -100,6 +103,6 @@ void motionHandler() {
 
 // Interrupt service routine (ISR) for motion detection
 void motionInterruptHandler() {
-  println("!");
+  println(".");
   motionDetected = true;
 }
